@@ -10,10 +10,13 @@
 ;;; "r" for (r)ock, "p" for (p)aper, "s" for (s)cissors,
 ;;; "l" for (l)izzard, "o" for Sp(o)ck or nil if the
 ;;; guess is invalid
+(defn validate-guess [guess]
+  (if (#{"r" "p" "s" "l" "o"} guess) guess))
+
 (defn get-guess []
   (println "Play your hand: (r)ock, (p)aper, (s)cissors, (l)izzard, Sp(o)ck")
   (let [guess (read-line)]
-    (if (#{"r" "p" "s" "l" "o"} guess) guess)))
+    (validate-guess guess)))
 
 (defn winner
   "Defines the wining guess

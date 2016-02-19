@@ -3,6 +3,16 @@
             [clojure.test :refer :all]
             [rpsls-clj.core :refer :all]))
 
+(facts "Guess validation"
+  (fact "returs the valid guess"
+    (validate-guess "r") => "r"
+    (validate-guess "p") => "p"
+    (validate-guess "s") => "s")
+
+  (fact "returs nil for invalid guess"
+    (validate-guess "e") => nil
+    (validate-guess "Foo") => nil))
+
 (facts "Winner is determined correctly"
   (fact "for the first player playing rock"
     (winner "r" "r") => 0
