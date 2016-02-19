@@ -1,36 +1,10 @@
-# rpsls-clj
+# rpsls-clj - Rock, Paper, Scissors, Lizzard, Spock in Clojure
 
-FIXME: description
-
-## Installation
-
-Download from http://example.com/FIXME.
-
-## Usage
-
-FIXME: explanation
-
-    $ java -jar rpsls-clj-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
+A simple version of the game made popular by Big Bang Theory
 
 ## License
 
-Copyright © 2016 FIXME
+Copyright © 2016 Damian Niemczyk
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.

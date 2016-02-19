@@ -43,7 +43,14 @@
       (= winner 1) (println "You win!")
       (= winner 2) (println "Computer wins."))))
 
+(defn new-game? []
+  (println "Do you want to play one more game [Y/n]")
+  (let [response (read-line)]
+    (if (#{"Y" "y"} response) true)))
+
 (defn -main
-  "I don't do a whole lot ... yet."
+  "Plays the game or Rock, Paper, Scissors, Lizzard, Spock."
   [& args]
-  (println "Hello, World!"))
+  (loop []
+    (play-hand)
+    (if (new-game?) (recur))))
