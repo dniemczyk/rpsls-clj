@@ -26,3 +26,9 @@
     (winner "p" "s") => 2
     (winner "p" "l") => 2
     (winner "p" "o") => 1))
+
+(facts "About guess->string"
+  (fact "changes guess chars to full strings"
+    (guess->string "r") => "Rock"
+    (guess->string "p") => "Paper"
+    (guess->string "s") => "Scissors"))
