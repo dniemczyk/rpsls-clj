@@ -6,9 +6,14 @@
 (ns rpsls-clj.core
   (:gen-class))
 
-;;; Any of the two players can choose one of the 5 options:
+;;; Returns one of the 5 options for the player choice:
 ;;; "r" for (r)ock, "p" for (p)aper, "s" for (s)cissors,
-;;; "l" for (l)izzard, "o" for Sp(o)ck
+;;; "l" for (l)izzard, "o" for Sp(o)ck or nil if the
+;;; guess is invalid
+(defn get-guess []
+  (println "Play your hand: (r)ock, (p)aper, (s)cissors, (l)izzard, Sp(o)ck")
+  (let [guess (read-line)]
+    (if (#{"r" "p" "s" "l" "o"} guess) guess)))
 
 (defn winner
   "Defines the wining guess
