@@ -31,6 +31,18 @@
                     ["o" "r"] 1 ["o" "p"] 2 ["o" "s"] 1 ["o" "l"] 2}]
     (if (= guess1 guess2) 0 (get winner-map guesses))))
 
+(defn play-hand []
+  (let [player-guess (get-guess)
+        computer-guess (rand-nth ["r" "p" "s" "l" "s"])
+        winner (winner player-guess computer-guess)]
+    (println "The computer guessed: " computer-guess)
+    (println "You guessed: " player-guess)
+    (cond
+      (nil? player-guess) (println "Your entry was invalid...")
+      (= winner 0) (println "It is a draw.")
+      (= winner 1) (println "You win!")
+      (= winner 2) (println "Computer wins."))))
+
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
