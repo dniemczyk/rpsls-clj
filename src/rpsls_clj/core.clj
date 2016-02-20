@@ -41,7 +41,7 @@
 
 (defn play-hand []
   (let [player-guess (get-guess)
-        computer-guess (rand-nth ["r" "p" "s" "l" "s"])
+        computer-guess (rand-nth ["r" "p" "s" "l" "o"])
         winner (winner player-guess computer-guess)]
     (println "The computer guessed: " (guess->string computer-guess))
     (println "You guessed: " (guess->string player-guess))
