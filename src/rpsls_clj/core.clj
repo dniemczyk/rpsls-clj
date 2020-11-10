@@ -51,14 +51,23 @@
       (= winner 1) (println "You win!")
       (= winner 2) (println "Computer wins."))))
 
+(defn start-new-game? [s]
+  (cond
+    (nil? s) :yes
+    (#{"Y" "y" ""} s) :yes
+    (#{"N" "n"} s) :quit
+    :else :ask-again))
+
 (defn new-game? []
   (println "Do you want to play one more game [Y/n]")
   (let [response (read-line)]
-    (if (#{"Y" "y"} response) true)))
+    (do
+      (let [start-new-game (start-new-game? response)]
+        (= :yes start-new-game)))))
 
 (defn -main
   "Plays the game or Rock, Paper, Scissors, Lizzard, Spock."
   [& args]
   (loop []
     (play-hand)
-    (if (new-game?) (recur))))
+    (if (new-game?)(recur))))

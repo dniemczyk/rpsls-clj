@@ -32,3 +32,18 @@
     (guess->string "r") => "Rock"
     (guess->string "p") => "Paper"
     (guess->string "s") => "Scissors"))
+
+(facts "A new game"
+  (fact "starts with Y or y pressed"
+    (start-new-game? "Y") => :yes
+    (start-new-game? "y") => :yes)
+  (fact "will not be started with N or n pressed, but will quit"
+    (start-new-game? "N") => :quit
+    (start-new-game? "n") => :quit)
+  (fact "starts also with nil (default is (Y)es)"
+    (start-new-game? nil) => :yes
+    (start-new-game? "")  => :yes)
+  (fact "any other value asks again"
+    (start-new-game? "aaee") => :ask-again
+    (start-new-game? "B")    => :ask-again
+    (start-new-game? "))")   => :ask-again))
